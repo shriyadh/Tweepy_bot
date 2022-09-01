@@ -59,3 +59,12 @@ for tweet in tweepy.Cursor(api.search, search_str).items(numOfTweets):
     print(e.reason)
   except StopIteration:
     break
+  
+ #retweet the post
+   try:
+    tweet.retweet()
+    print('I liked the Tweet')
+  except tweepy.TweepError as e:
+    print(e.reason)
+  except StopIteration:
+    break
